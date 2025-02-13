@@ -14,7 +14,6 @@ Panels:
         - /MarkerArray2
         - /MarkerArray3
         - /LaserScan1
-        - /LaserScan1/Status1
       Splitter Ratio: 0.5286620259284973
     Tree Height: 1214
   - Class: rviz/Selection
@@ -84,14 +83,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         camera_link:
           Alpha: 1
           Show Axes: false
@@ -105,12 +96,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        caster_back_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_back_right_link:
+        caster_back_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -138,7 +124,7 @@ Visualization Manager:
     - Class: rviz/Camera
       Enabled: true
       Image Rendering: background and overlay
-      Image Topic: /camera/rgb/image_raw
+      Image Topic: /camera/image
       Name: Camera
       Overlay Alpha: 0.5
       Queue Size: 2
@@ -267,7 +253,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0.009999832138419151
+      Angle: 0.004999865777790546
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -277,10 +263,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 71.48795318603516
+      Scale: 89.47660827636719
       Target Frame: <Fixed Frame>
-      X: -0.62079918384552
-      Y: -1.9562355279922485
+      X: 0.24771006405353546
+      Y: -0.3765793740749359
     Saved: ~
 Window Geometry:
   Camera:

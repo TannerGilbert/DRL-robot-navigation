@@ -1,5 +1,5 @@
 <launch>
-    <arg name="model" default="waffle"/>
+    <arg name="model" default="burger_for_autorace"/>
     <arg name="robot_position" default="-x -1.0 -y 5.0 -z 0.01" />
 
     <param name="robot_description"

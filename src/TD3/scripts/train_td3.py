@@ -3,16 +3,15 @@ import os
 import time
 
 import numpy as np
+import rospkg
+import rospy
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from numpy import inf
-from torch.utils.tensorboard import SummaryWriter
-
-from replay_buffer import ReplayBuffer
 from gazebo_env import GazeboEnv
-import rospy
-import rospkg
+from numpy import inf
+from replay_buffer import ReplayBuffer
+from torch.utils.tensorboard import SummaryWriter
 
 rospy.init_node("td3_trainer", anonymous=True)
 
@@ -23,7 +22,7 @@ def evaluate(network, epoch, eval_episodes=10):
         count = 0
         state = env.reset()
         done = False
-        while not done and count < 501:
+        while not done and count < max_ep:
             action = network.get_action(np.array(state))
             a_in = [(action[0] + 1) / 2, action[1]]
             state, reward, done, _ = env.step(a_in)
@@ -223,7 +222,7 @@ pkg_path = rospack.get_path("td3_rl")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 seed = rospy.get_param("td3_params/seed", 0)
 eval_freq = rospy.get_param("td3_params/eval_freq", 500)
-max_ep = rospy.get_param("td3_params/max_ep", 500)
+max_ep = rospy.get_param("td3_params/max_ep", 150)
 eval_ep = rospy.get_param("td3_params/eval_ep", 10)
 max_timesteps = rospy.get_param("td3_params/max_timesteps", 5000)
 expl_noise = rospy.get_param("td3_params/expl_noise", 1.0)
@@ -282,6 +281,7 @@ done = True
 epoch = 1
 
 count_rand_actions = 0
+episode_timesteps = 0
 random_action = []
 
 # Begin the training loop

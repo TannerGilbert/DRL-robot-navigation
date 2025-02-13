@@ -7,14 +7,13 @@ import rospy
 from gazebo_msgs.msg import ModelState
 from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
+from sensor_msgs.msg import LaserScan
 from squaternion import Quaternion
 from std_srvs.srv import Empty
-from visualization_msgs.msg import Marker
-from visualization_msgs.msg import MarkerArray
-from sensor_msgs.msg import LaserScan
+from visualization_msgs.msg import Marker, MarkerArray
 
 GOAL_REACHED_DIST = 0.3
-COLLISION_DIST = 0.35
+COLLISION_DIST = 0.25
 TIME_DELTA = 0.1
 
 
@@ -77,7 +76,7 @@ class GazeboEnv:
         self.last_odom = None
 
         self.set_self_state = ModelState()
-        self.set_self_state.model_name = "turtlebot3_waffle"
+        self.set_self_state.model_name = "turtlebot3_burger_for_autorace"
         self.set_self_state.pose.position.x = 0.0
         self.set_self_state.pose.position.y = 0.0
         self.set_self_state.pose.position.z = 0.0

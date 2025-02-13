@@ -1,0 +1,16 @@
+{
+  "name": "noetic desktop-full",
+  "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--privileged",
+    "--network=host",
+    "-e", "DISPLAY=${env:DISPLAY}", 
+    "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
+  ],
+  "postCreateCommand": "bash -c 'if [ -f /workspace/requirements.txt ]; then pip3 install -r /workspace/requirements.txt; fi && source /opt/ros/noetic/setup.bash && rm -rf /workspace/build /workspace/devel /workspace/logs /workspace/.catkin_tools && catkin build'"
+}

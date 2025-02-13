@@ -1,13 +1,13 @@
 td3_params:
-  seed: 0
+  seed: 42
   eval_freq: 500
-  max_ep: 500
-  eval_ep: 10
-  max_timesteps: 5000
+  max_ep: 100
+  eval_ep: 3
+  max_timesteps: 1000000
   expl_noise: 1.0
   expl_decay_steps: 500000
   expl_min: 0.1
-  batch_size: 128
+  batch_size: 256
   discount: 0.99999
   tau: 0.005
   policy_noise: 0.2
