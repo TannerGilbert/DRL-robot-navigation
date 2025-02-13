@@ -1,0 +1,9 @@
+.catkin_tools
+.catkin_workspace
+build
+devel
+logs
+pytorch_models
+results
+runs
+__pycache__

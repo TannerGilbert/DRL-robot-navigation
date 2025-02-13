@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from velodyne_env import GazeboEnv
+from TD3.gazebo_env import GazeboEnv
 
 
 class Actor(nn.Module):

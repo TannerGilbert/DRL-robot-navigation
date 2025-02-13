@@ -1,5 +1,6 @@
 # DRL-robot-navigation
 
+For of [DRL-robot-navigation](https://github.com/reiniscimurs/DRL-robot-navigation) with modifications to run with the Turtlebot3 and its 2D lidar sensor.
 
 Deep Reinforcement Learning for mobile robot navigation in ROS Gazebo simulator. Using Twin Delayed Deep Deterministic Policy Gradient (TD3) neural network, a robot learns to navigate to a random goal point in a simulated environment while avoiding obstacles. Obstacles are detected by laser readings and a goal is given to the robot in polar coordinates. Trained in ROS Gazebo simulator with PyTorch.  Tested with ROS Noetic on Ubuntu 20.04 with python 3.8.10 and pytorch 1.10.
 
@@ -9,7 +10,7 @@ Deep Reinforcement Learning for mobile robot navigation in ROS Gazebo simulator.
 
 Training example:
 <p align="center">
-    <img width=100% src="https://github.com/reiniscimurs/DRL-robot-navigation/blob/main/training.gif">
+    <img width=100% src="doc/training.gif">
 </p>
 
 
@@ -90,11 +91,11 @@ $ python3 test_velodyne_td3.py
 
 Gazebo environment:
 <p align="center">
-    <img width=80% src="https://github.com/reiniscimurs/DRL-robot-navigation/blob/main/env1.png">
+    <img width=80% src="doc/env1.png">
 </p>
 
 Rviz:
 <p align="center">
-    <img width=80% src="https://github.com/reiniscimurs/DRL-robot-navigation/blob/main/velodyne.png">
+    <img width=80% src="doc/velodyne.png">
 </p>
 

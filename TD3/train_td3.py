@@ -9,7 +9,7 @@ from numpy import inf
 from torch.utils.tensorboard import SummaryWriter
 
 from replay_buffer import ReplayBuffer
-from velodyne_env import GazeboEnv
+from TD3.gazebo_env import GazeboEnv
 
 
 def evaluate(network, epoch, eval_episodes=10):
