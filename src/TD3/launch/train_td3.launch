@@ -1,0 +1,16 @@
+<launch>
+    <arg name="gui" default="true" />
+    <arg name="rviz" default="true" />
+
+    <!-- Load the TD3 configuration parameters -->
+    <rosparam file="$(find td3_rl)/config/td3_config.yaml" command="load"/>
+
+    <!-- Start Gazebo and spawn robot -->
+    <include file="$(find td3_rl)/launch/start_simulation.launch">
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="rviz" value="$(arg rviz)" />
+    </include>
+
+    <!-- Start the TD3 training script -->
+    <node name="td3_trainer" pkg="td3_rl" type="train_td3.py" output="screen"/>
+</launch>
