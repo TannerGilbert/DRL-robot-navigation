@@ -12,7 +12,7 @@ from squaternion import Quaternion
 from std_srvs.srv import Empty
 from visualization_msgs.msg import Marker, MarkerArray
 
-GOAL_REACHED_DIST = 0.3
+GOAL_REACHED_DIST = 0.5
 COLLISION_DIST = 0.25
 TIME_DELTA = 0.1
 
@@ -68,7 +68,7 @@ class GazeboEnv:
         self.goal_x = 1
         self.goal_y = 0.0
         
-        self.max_distance = 6.0
+        self.max_distance = 3.5
 
         self.upper = 5.0
         self.lower = -5.0
@@ -140,7 +140,7 @@ class GazeboEnv:
             print("/gazebo/unpause_physics service call failed")
 
         # propagate state for TIME_DELTA seconds
-        time.sleep(TIME_DELTA)
+        rospy.sleep(TIME_DELTA)
 
         rospy.wait_for_service("/gazebo/pause_physics")
         try:
@@ -245,7 +245,7 @@ class GazeboEnv:
         except (rospy.ServiceException) as e:
             print("/gazebo/unpause_physics service call failed")
 
-        time.sleep(TIME_DELTA)
+        rospy.sleep(TIME_DELTA)
 
         rospy.wait_for_service("/gazebo/pause_physics")
         try:

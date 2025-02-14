@@ -283,13 +283,15 @@ epoch = 1
 count_rand_actions = 0
 episode_timesteps = 0
 random_action = []
+last_time = time.time()
 
-# Begin the training loop
 while timestep < max_timesteps:
-    # On termination of episode
+    if timestep % 100 == 0:
+        current_time = time.time()
+        print(f"{timestep} timesteps. Last 100 timesteps finished in {(current_time - last_time):.2f} seconds")
+        last_time = current_time
+
     if done:
-        if timestep % 100 == 0:
-            print(f"{timestep} timesteps finished")
         if timestep != 0:
             network.train(
                 replay_buffer,
