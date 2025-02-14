@@ -2,6 +2,8 @@
 
 This repository is a fork of [DRL-robot-navigation](https://github.com/reiniscimurs/DRL-robot-navigation) with modifications to run with the Turtlebot3 and its 2D lidar sensor. All the base behavior should be credited to the original author. The fork however changes the structure of the project so everything can be executed directly via ROS.
 
+![Inference example](doc/model_test.gif)
+
 ## Installation
 
 1. Clone the repository
@@ -38,6 +40,8 @@ Check training progress with Tensorboard:
 $ cd src/TD3
 $ tensorboard --logdir runs
 ```
+
+![Tensorboard](doc/tensorboard.png)
 
 ### Inference
 
