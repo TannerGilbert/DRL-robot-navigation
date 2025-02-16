@@ -6,19 +6,21 @@
   <maintainer email="gilberttanner.contact@gmail.com">Gilbert Tanner</maintainer>
   <license>BSD</license>
 
-  <depend>rospy</depend>
-  <depend>std_msgs</depend>
-  <depend>geometry_msgs</depend>
-  <depend>sensor_msgs</depend>
-  <depend>gazebo_ros</depend>
-  <depend>gazebo_msgs</depend>
-  <depend>nav_msgs</depend>
-  <depend>message_generation</depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <buildtool_depend>catkin_make</buildtool_depend>
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
 
   <export>
-    <build_type>catkin</build_type>
+    <build_type>ament_python</build_type>
   </export>
 </package>

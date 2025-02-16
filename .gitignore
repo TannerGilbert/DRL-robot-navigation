@@ -2,7 +2,9 @@
 .catkin_workspace
 build
 devel
+install
 logs
+log
 results
 runs
 __pycache__
